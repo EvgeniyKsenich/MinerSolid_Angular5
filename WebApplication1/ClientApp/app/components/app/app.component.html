@@ -1,0 +1,94 @@
+<div class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3'>
+            <nav-menu></nav-menu>
+        </div>
+        <div class='col-sm-9 body-content'>
+            <button class="btn btn-primary" (click)="NewGame()">New Game</button>
+            <span id="state">{{Field.GameState? "" : "Game Over"}}</span>
+            <span id="state">{{Field.WinState? "You Win" : ""}}</span>
+            <table (click)="Field.GameState?TableClick($event):true" (contextmenu)="Field.GameState?RightClick($event):true">
+                <tr id="row_0">
+                    <td id="element_0_0" class="cell_type_{{GetCode(0,0)}}">{{MineAround(0,0)}}</td>
+                    <td id="element_0_1" class="cell_type_{{GetCode(0,1)}}">{{MineAround(0,1)}}</td>
+                    <td id="element_0_2" class="cell_type_{{GetCode(0,2)}}">{{MineAround(0,2)}}</td>
+                    <td id="element_0_3" class="cell_type_{{GetCode(0,3)}}">{{MineAround(0,3)}}</td>
+                    <td id="element_0_4" class="cell_type_{{GetCode(0,4)}}">{{MineAround(0,4)}}</td>
+                    <td id="element_0_5" class="cell_type_{{GetCode(0,5)}}">{{MineAround(0,5)}}</td>
+                    <td id="element_0_6" class="cell_type_{{GetCode(0,6)}}">{{MineAround(0,6)}}</td>
+                    <td id="element_0_7" class="cell_type_{{GetCode(0,7)}}">{{MineAround(0,7)}}</td>
+                </tr>
+                <tr id="row_1">
+                    <td id="element_1_0" class="cell_type_{{GetCode(1,0)}}">{{MineAround(1,0)}}</td>
+                    <td id="element_1_1" class="cell_type_{{GetCode(1,1)}}">{{MineAround(1,1)}}</td>
+                    <td id="element_1_2" class="cell_type_{{GetCode(1,2)}}">{{MineAround(1,2)}}</td>
+                    <td id="element_1_3" class="cell_type_{{GetCode(1,3)}}">{{MineAround(1,3)}}</td>
+                    <td id="element_1_4" class="cell_type_{{GetCode(1,4)}}">{{MineAround(1,4)}}</td>
+                    <td id="element_1_5" class="cell_type_{{GetCode(1,5)}}">{{MineAround(1,5)}}</td>
+                    <td id="element_1_6" class="cell_type_{{GetCode(1,6)}}">{{MineAround(1,6)}}</td>
+                    <td id="element_1_7" class="cell_type_{{GetCode(1,7)}}">{{MineAround(1,7)}}</td>
+                </tr>
+                <tr id="row_2">
+                    <td id="element_2_0" class="cell_type_{{GetCode(2,0)}}">{{MineAround(2,0)}}</td>
+                    <td id="element_2_1" class="cell_type_{{GetCode(2,1)}}">{{MineAround(2,1)}}</td>
+                    <td id="element_2_2" class="cell_type_{{GetCode(2,2)}}">{{MineAround(2,2)}}</td>
+                    <td id="element_2_3" class="cell_type_{{GetCode(2,3)}}">{{MineAround(2,3)}}</td>
+                    <td id="element_2_4" class="cell_type_{{GetCode(2,4)}}">{{MineAround(2,4)}}</td>
+                    <td id="element_2_5" class="cell_type_{{GetCode(2,5)}}">{{MineAround(2,5)}}</td>
+                    <td id="element_2_6" class="cell_type_{{GetCode(2,6)}}">{{MineAround(2,6)}}</td>
+                    <td id="element_2_7" class="cell_type_{{GetCode(2,7)}}">{{MineAround(2,7)}}</td>
+                </tr>
+                <tr id="row_3">
+                    <td id="element_3_0" class="cell_type_{{GetCode(3,0)}}">{{MineAround(3,0)}}</td>
+                    <td id="element_3_1" class="cell_type_{{GetCode(3,1)}}">{{MineAround(3,1)}}</td>
+                    <td id="element_3_2" class="cell_type_{{GetCode(3,2)}}">{{MineAround(3,2)}}</td>
+                    <td id="element_3_3" class="cell_type_{{GetCode(3,3)}}">{{MineAround(3,3)}}</td>
+                    <td id="element_3_4" class="cell_type_{{GetCode(3,4)}}">{{MineAround(3,4)}}</td>
+                    <td id="element_3_5" class="cell_type_{{GetCode(3,5)}}">{{MineAround(3,5)}}</td>
+                    <td id="element_3_6" class="cell_type_{{GetCode(3,6)}}">{{MineAround(3,6)}}</td>
+                    <td id="element_3_7" class="cell_type_{{GetCode(3,7)}}">{{MineAround(3,7)}}</td>
+                </tr>
+                <tr id="row_4">
+                    <td id="element_4_0" class="cell_type_{{GetCode(4,0)}}">{{MineAround(4,0)}}</td>
+                    <td id="element_4_1" class="cell_type_{{GetCode(4,1)}}">{{MineAround(4,1)}}</td>
+                    <td id="element_4_2" class="cell_type_{{GetCode(4,2)}}">{{MineAround(4,2)}}</td>
+                    <td id="element_4_3" class="cell_type_{{GetCode(4,3)}}">{{MineAround(4,3)}}</td>
+                    <td id="element_4_4" class="cell_type_{{GetCode(4,4)}}">{{MineAround(4,4)}}</td>
+                    <td id="element_4_5" class="cell_type_{{GetCode(4,5)}}">{{MineAround(4,5)}}</td>
+                    <td id="element_4_6" class="cell_type_{{GetCode(4,6)}}">{{MineAround(4,6)}}</td>
+                    <td id="element_4_7" class="cell_type_{{GetCode(4,7)}}">{{MineAround(4,7)}}</td>
+                </tr>
+                <tr id="row_5">
+                    <td id="element_5_0" class="cell_type_{{GetCode(5,0)}}">{{MineAround(5,0)}}</td>
+                    <td id="element_5_1" class="cell_type_{{GetCode(5,1)}}">{{MineAround(5,1)}}</td>
+                    <td id="element_5_2" class="cell_type_{{GetCode(5,2)}}">{{MineAround(5,2)}}</td>
+                    <td id="element_5_3" class="cell_type_{{GetCode(5,3)}}">{{MineAround(5,3)}}</td>
+                    <td id="element_5_4" class="cell_type_{{GetCode(5,4)}}">{{MineAround(5,4)}}</td>
+                    <td id="element_5_5" class="cell_type_{{GetCode(5,5)}}">{{MineAround(5,5)}}</td>
+                    <td id="element_5_6" class="cell_type_{{GetCode(5,6)}}">{{MineAround(5,6)}}</td>
+                    <td id="element_5_7" class="cell_type_{{GetCode(5,7)}}">{{MineAround(5,7)}}</td>
+                </tr>
+                <tr id="row_6">
+                    <td id="element_6_0" class="cell_type_{{GetCode(6,0)}}">{{MineAround(6,0)}}</td>
+                    <td id="element_6_1" class="cell_type_{{GetCode(6,1)}}">{{MineAround(6,1)}}</td>
+                    <td id="element_6_2" class="cell_type_{{GetCode(6,2)}}">{{MineAround(6,2)}}</td>
+                    <td id="element_6_3" class="cell_type_{{GetCode(6,3)}}">{{MineAround(6,3)}}</td>
+                    <td id="element_6_4" class="cell_type_{{GetCode(6,4)}}">{{MineAround(6,4)}}</td>
+                    <td id="element_6_5" class="cell_type_{{GetCode(6,5)}}">{{MineAround(6,5)}}</td>
+                    <td id="element_6_6" class="cell_type_{{GetCode(6,6)}}">{{MineAround(6,6)}}</td>
+                    <td id="element_6_7" class="cell_type_{{GetCode(6,7)}}">{{MineAround(6,7)}}</td>
+                </tr>
+                <tr id="row_7">
+                    <td id="element_7_0" class="cell_type_{{GetCode(7,0)}}">{{MineAround(7,0)}}</td>
+                    <td id="element_7_1" class="cell_type_{{GetCode(7,1)}}">{{MineAround(7,1)}}</td>
+                    <td id="element_7_2" class="cell_type_{{GetCode(7,2)}}">{{MineAround(7,2)}}</td>
+                    <td id="element_7_3" class="cell_type_{{GetCode(7,3)}}">{{MineAround(7,3)}}</td>
+                    <td id="element_7_4" class="cell_type_{{GetCode(7,4)}}">{{MineAround(7,4)}}</td>
+                    <td id="element_7_5" class="cell_type_{{GetCode(7,5)}}">{{MineAround(7,5)}}</td>
+                    <td id="element_7_6" class="cell_type_{{GetCode(7,6)}}">{{MineAround(7,6)}}</td>
+                    <td id="element_7_7" class="cell_type_{{GetCode(7,7)}}">{{MineAround(7,7)}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
